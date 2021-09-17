@@ -1,14 +1,20 @@
-import "../assets/css/images.scss";
+import "../assets/css/app-images.scss";
 import AppImage from "../components/AppImage";
+import AppImageLoading from "../components/AppImageLoading";
 
-const AppImages = () => {
-
+const AppImages = ({ loading, images }) => {
     return (
         <div className="app-images">
-            <AppImage />
-            <AppImage />
-            <AppImage />
-            <AppImage />
+            {
+                loading ?
+                    Array.from(Array(4), (number, i) => {
+                        return <AppImageLoading key={i} />
+                    })
+                    :
+                    images.map((image, key) => {
+                        return <AppImage key={key} image={image} />
+                    })
+            }
         </div>
     );
 }

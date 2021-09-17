@@ -11,3 +11,8 @@ export const getApod = () => {
     return fetch(`${NASA_APOD}`, { headers })
         .then(res => res.json())
 }
+
+export const getImages = (query) => {
+    return fetch(`${NASA_IMAGE}${query}`, { headers })
+        .then(res => res.json())
+}

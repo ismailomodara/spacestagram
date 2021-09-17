@@ -1,10 +1,9 @@
-import "../assets/css/images.scss";
 import apodImage from "../assets/img/test.jpeg";
 
 const AppImages = () => {
 
     return (
-        <div className="app-image">
+        <div className="app-image loading">
             <div className="app-image__bg">
                 <img src={apodImage} alt="Alt" />
             </div>
@@ -19,7 +18,6 @@ const AppImages = () => {
                     <h3>Title Goes Here</h3>
                     <p>25th September, 2021.</p>
                 </div>
-                <p>Learn</p>
             </div>
         </div>
     );

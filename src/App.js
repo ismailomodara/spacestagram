@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react';
-import { getApod } from "./services";
+import { useState, useCallback, useEffect } from 'react';
+import {getApod, getImages} from "./services";
 
 import Apod from "./components/Apod";
 import AppSearch from "./components/AppSearch";
@@ -21,6 +21,14 @@ const App = () => {
         })
     }, []);
 
+    useCallback( () => {
+        getImages().then(response => {
+            if(response.collection) {
+                setImages(response.collection.items)
+            }
+        })
+    }, []);
+
     return (
         <div className="app">
           <div className="app-banner">
@@ -30,7 +38,7 @@ const App = () => {
               <Apod apod={apod} />
               <div className="app-body__images">
                 <AppSearch />
-                <AppImages />
+                <AppImages searching={searching} images={images} />
               </div>
           </div>
         </div>

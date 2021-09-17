@@ -2,7 +2,7 @@ import '../assets/css/apod.scss';
 import apodIcon from '../assets/img/astronomy.svg';
 
 const Apod = ({ apod }) => {
-    const { title, explanation, media_type, url, thumbnail_url } = apod;
+    const { date, title, explanation, media_type, url, thumbnail_url } = apod;
     const sentences = explanation && explanation.split('.');
     const description = sentences ? sentences[0] + '. ' + sentences[1] : ''
 
@@ -19,12 +19,12 @@ const Apod = ({ apod }) => {
             </div>
             <div className="apod-image">
                 <img src={media_type === 'video' ? thumbnail_url : url} alt="ApodImage" />
-                <span>© Andrew Klinger</span>
+                <span>{ date }</span>
             </div>
             <div className="apod-description">
                 <h4>{ title }</h4>
                 <p>{ description }.</p>
-                <a href="https://apod.nasa.gov/apod/astropix.html">
+                <a href="https://apod.nasa.gov/apod/astropix.html" target="_blank">
                     <button className="btn btn-primary btn-small">Read more</button>
                 </a>
             </div>
