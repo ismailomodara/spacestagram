@@ -42,7 +42,7 @@ p {
 }
 
 .app {
-  &-banner {
+  &-header {
     height: 400px;
     width: 100%;
     background: var(--primary);
@@ -51,6 +51,11 @@ p {
     align-items: center;
     background-image: url("../../assets/img/bg.jpg");
 
+    img {
+      height: 100px;
+      width: auto;
+      margin-right: 10px;
+    }
     h1 {
       font-size: 3.5rem;
       font-weight: 300;
@@ -104,6 +109,37 @@ p {
             transition: border 0.3s ease-in;
           }
         }
+      }
+    }
+  }
+}
+
+
+@media (max-width: 600px) {
+  .app-header {
+    height: 300px;
+    flex-direction: column;
+
+    img {
+      height: 60px;
+      margin-right: 0;
+      margin-bottom: 10px;
+    }
+
+    h1 {
+      font-size: 2rem;
+    }
+  }
+
+  .app-body {
+    padding: 20px;
+
+    &__search {
+      flex-direction: column;
+
+      h2 {
+        font-size: 1.2rem;
+        margin-bottom: 15px;
       }
     }
   }

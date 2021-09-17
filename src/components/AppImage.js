@@ -6,7 +6,7 @@ const AppImage = ({ image }) => {
     return (
         <div className="app-image">
             <div className="app-image__bg">
-                <img src={href} alt="Alt" />
+                <img src={href} alt="Alt" loading="lazy" />
             </div>
             <div className="app-image__action">
                    <span>

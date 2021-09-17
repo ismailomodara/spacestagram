@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import { getImages } from "./services";
 
+import appIcon from "./assets/img/icon.svg";
+
 import AppSearch from "./components/AppSearch";
 import AppImages from "./views/AppImages";
 
@@ -21,7 +23,8 @@ const App = () => {
 
     return (
         <div className="app">
-          <div className="app-banner">
+          <div className="app-header">
+              <img src={appIcon} alt="S" />
               <h1>Spacestagram</h1>
           </div>
           <div className="app-body">

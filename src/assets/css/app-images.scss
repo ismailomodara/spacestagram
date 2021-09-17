@@ -151,3 +151,29 @@
     opacity: 1;
   }
 }
+
+@media (max-width: 600px) {
+  .app-images {
+    grid-auto-rows: 250px;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+    .app-image {
+
+      &__info {
+        padding: 20px;
+      }
+
+      &__action {
+        span {
+          height: 36px;
+          width: 36px;
+
+          svg {
+            height: 16px;
+            width: auto;
+          }
+        }
+      }
+    }
+  }
+}
