@@ -8,8 +8,8 @@ const AppImageLoading = () => {
                 <circle cx="8.5" cy="8.5" r="1.5"/>
                 <path d="M20.4 14.5L16 10 4 20"/>
             </svg>
-            <div />
-            <div />
+            <div className="title" />
+            <div className="date" />
         </div>
     )
 }

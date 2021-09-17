@@ -1,11 +1,12 @@
-import apodImage from "../assets/img/test.jpeg";
 
-const AppImages = () => {
+const AppImage = ({ image }) => {
+    const { title, date_created } = image.data[0];
+    const { href } = image.links[0];
 
     return (
-        <div className="app-image loading">
+        <div className="app-image">
             <div className="app-image__bg">
-                <img src={apodImage} alt="Alt" />
+                <img src={href} alt="Alt" />
             </div>
             <div className="app-image__action">
                    <span>
@@ -15,12 +16,12 @@ const AppImages = () => {
             </div>
             <div className="app-image__info">
                 <div>
-                    <h3>Title Goes Here</h3>
-                    <p>25th September, 2021.</p>
+                    <h3>{ title }</h3>
+                    <p>{ date_created }</p>
                 </div>
             </div>
         </div>
     );
 }
 
-export default AppImages;
+export default AppImage;
