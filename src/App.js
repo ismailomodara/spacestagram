@@ -1,5 +1,7 @@
 import './assets/css/app.scss';
 import Apod from "./components/Apod";
+import AppNav from "./components/AppNav";
+import AppImages from "./views/AppImages";
 
 function App() {
   return (
@@ -9,6 +11,10 @@ function App() {
       </div>
       <div className="app-body">
           <Apod />
+          <div className="app-body__content">
+            <AppNav />
+            <AppImages />
+          </div>
       </div>
     </div>
   );

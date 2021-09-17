@@ -1,0 +1,106 @@
+.app-images {
+  margin-top: 60px;
+  display: grid;
+  grid-auto-rows: 360px;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  grid-gap: 30px;
+}
+
+.app-image {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  border-radius: 20px;
+  background: #ffffff;
+  box-shadow: -10px 15px 30px rgba(9, 4, 21, 0.08);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+
+  &__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+
+
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      transform: scale(1);
+      transition: transform 2s ease-in;
+    }
+
+    &:hover {
+      img {
+        transform: scale(1.5);
+        transition: transform 5s ease-in;
+      }
+    }
+  }
+
+  &__action {
+    position: absolute;
+    right: 30px;
+    top: 30px;
+    z-index: 4;
+    cursor: pointer;
+
+    span {
+      height: 50px;
+      width: 50px;
+      border-radius: 100%;
+      background: #FFFFFF;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  &__info {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    padding: 20px 30px;
+    background-image: linear-gradient(#00000010, #00000090);
+    z-index: 1;
+    color: var(--white);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    > div {
+      p {
+        font-family: "IBM Plex Sans", sans-serif;
+        font-size: 0.75rem;
+        font-weight: 600;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+      }
+    }
+  }
+}
+
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
