@@ -2,11 +2,11 @@ import "../assets/css/app-images.scss";
 import AppImage from "../components/AppImage";
 import AppImageLoading from "../components/AppImageLoading";
 
-const AppImages = ({ loading, images }) => {
+const AppImages = ({ searching, images }) => {
     return (
         <div className="app-images">
             {
-                loading ?
+                searching ?
                     Array.from(Array(4), (number, i) => {
                         return <AppImageLoading key={i} />
                     })

@@ -10,7 +10,7 @@ const App = () => {
     const [apod, setApod] = useState({});
 
     const [searching, setSearching] = useState(false);
-    const [query, setQuery] = useState('');
+    const [query, setQueryValue] = useState('');
     const [images, setImages] = useState([]);
 
     useEffect( () => {
@@ -22,12 +22,13 @@ const App = () => {
     }, []);
 
     useCallback( () => {
+        setSearching(true)
         getImages().then(response => {
             if(response.collection) {
                 setImages(response.collection.items)
             }
         })
-    }, []);
+    }, [query]);
 
     return (
         <div className="app">
@@ -37,7 +38,7 @@ const App = () => {
           <div className="app-body">
               <Apod apod={apod} />
               <div className="app-body__images">
-                <AppSearch />
+                <AppSearch setQuery={setQueryValue} />
                 <AppImages searching={searching} images={images} />
               </div>
           </div>
