@@ -1,7 +1,7 @@
 import "../assets/css/images.scss";
 import apodImage from "../assets/img/test.jpeg";
 
-const AppImage = () => {
+const AppImages = () => {
 
     return (
         <div className="app-image">
@@ -25,4 +25,4 @@ const AppImage = () => {
     );
 }
 
-export default AppImage;
+export default AppImages;

@@ -1,8 +1,11 @@
 import '../assets/css/apod.scss';
 import apodIcon from '../assets/img/astronomy.svg';
-import apodImage from '../assets/img/test.jpeg';
 
-const Apod = () => {
+const Apod = ({ apod }) => {
+    const { title, explanation, media_type, url, thumbnail_url } = apod;
+    const sentences = explanation && explanation.split('.');
+    const description = sentences ? sentences[0] + '. ' + sentences[1] : ''
+
     return (
         <div className="apod">
             <div className="apod-title">
@@ -15,15 +18,13 @@ const Apod = () => {
                 </div>
             </div>
             <div className="apod-image">
-                <img src={apodImage} alt="ApodImage" />
+                <img src={media_type === 'video' ? thumbnail_url : url} alt="ApodImage" />
                 <span>© Andrew Klinger</span>
             </div>
             <div className="apod-description">
-                <h4>North America and the Pelican</h4>
-                <p>Fans of our fair planet might recognize the outlines of these cosmic clouds. On the left, bright
-                    emission outlined by dark, obscuring dust lanes seems to trace a continental shape, lending the
-                    popular name North America Nebula to the emission region cataloged as NGC 7000.</p>
-                <a href="https://google.com">
+                <h4>{ title }</h4>
+                <p>{ description }.</p>
+                <a href="https://apod.nasa.gov/apod/astropix.html">
                     <button className="btn btn-primary btn-small">Read more</button>
                 </a>
             </div>

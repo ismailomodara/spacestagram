@@ -58,35 +58,14 @@ body {
     display: grid;
     grid-template-columns: 360px 1fr;
 
-    &__content {
+    &__images {
       padding: 0 60px 40px;
     }
 
-    &__nav {
+    &__search {
       display: flex;
       justify-content: space-between;
       align-items: center;
-
-      .links {
-        display: flex;
-        list-style: none;
-        margin: 0;
-        padding: 0;
-
-        li {
-          font-size: 1rem;
-          font-weight: 700;
-          padding: 12px 30px;
-          opacity: 0.8;
-          cursor: pointer;
-          border-bottom: 3px solid transparent;
-
-          &.active {
-            opacity: 1;
-            border-color: var(--primary);
-          }
-        }
-      }
 
       .search {
         height: 55px;
