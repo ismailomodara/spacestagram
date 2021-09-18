@@ -1,4 +1,4 @@
-import "../assets/css/app-images.scss";
+import "../assets/css/app-images.css";
 import AppImage from "../components/AppImage";
 import AppImageLoading from "../components/AppImageLoading";
 

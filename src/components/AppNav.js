@@ -1,4 +1,4 @@
-import '../assets/css/app-nav.scss';
+import '../assets/css/app-nav.css';
 
 const AppNav = ({ tab, setTab, setQuery }) => {
     const tabs = ["Home", "Likes"]

@@ -40,7 +40,7 @@ const App = () => {
               <div className="app-header__description">
                   <p>Explore documentary images into space via the NASA Image API</p>
               </div>
-              <a className="app-header__cta" href="https://github.com/omodara145/spacestagram.git" target="_blank">
+              <a className="app-header__cta" href="https://github.com/omodara145/spacestagram.git" target="_blank" rel="noreferrer">
                   <span>Github</span>
               </a>
           </div>
