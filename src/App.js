@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { getImages } from "./services";
+import { getImages } from "./utils";
 
 import appIcon from "./assets/img/icon.svg";
 

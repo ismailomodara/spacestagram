@@ -7,7 +7,7 @@ const AppImages = ({ loading, images }) => {
         <div className="app-images">
             {
                 loading ?
-                    Array.from(Array(4), (number, i) => {
+                    Array.from(Array(6), (number, i) => {
                         return <AppImageLoading key={i} />
                     })
                     :
