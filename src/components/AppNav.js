@@ -2,8 +2,7 @@ import { useState } from "react";
 
 import '../assets/css/app-nav.scss';
 
-const AppNav = ({ setQuery }) => {
-    const [tab, setTab] = useState('Home');
+const AppNav = ({ tab, setTab, setQuery }) => {
     const tabs = ["Home", "Likes"]
     return (
         <div className="app-body__nav">

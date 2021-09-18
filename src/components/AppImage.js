@@ -1,10 +1,20 @@
-import { useState } from "react";
-import { formatDate } from "../utils";
+import { useState, useEffect } from "react";
+import { getSavedImagesId, formatDate, saveImage, removeImage } from "../utils";
 
 const AppImage = ({ image }) => {
-    const { title, date_created } = image.data[0];
+    const { title, date_created, nasa_id } = image.data[0];
     const { href } = image.links[0];
-    const [liked, setLiked] = useState(false);
+
+    const imageSaved = getSavedImagesId().includes(nasa_id)
+    const [liked, setLiked] = useState(imageSaved);
+
+    useEffect( () => {
+        if(liked) {
+            saveImage(image);
+        } else {
+            removeImage(nasa_id);
+        }
+    }, [liked]);
 
     return (
         <div className="app-image">

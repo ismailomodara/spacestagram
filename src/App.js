@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react';
-import { getImages } from "./utils";
+import { useState, useEffect, useCallback } from 'react';
+import { getImages, getSavedImages } from "./utils";
 import debounce from 'lodash.debounce';
 
 import appIcon from "./assets/img/icon.svg";
@@ -10,21 +10,22 @@ import AppImages from "./views/AppImages";
 const fetchImages = debounce((query, callback) => {
     getImages(query).then(response => {
         if(response.collection) {
-            callback(response);
+            callback(response.collection.items);
         }
     })
 }, 500);
 
 const App = () => {
     const [loading, setLoading] = useState(false);
-    const [query, setQueryValue] = useState('');
-    const [images, setImages] = useState([]);
+    const [tab, setTab] = useState('Home');
+    const [query, setQuery] = useState('');
 
+    const [images, setImages] = useState([]);
 
     useEffect( () => {
         setLoading(true)
-        fetchImages(query, response => {
-            setImages(response.collection.items)
+        fetchImages(query, images => {
+            setImages(images)
             setLoading(false)
         })
     }, [query]);
@@ -36,8 +37,13 @@ const App = () => {
               <h1>Spacestagram</h1>
           </div>
           <div className="app-body">
-              <AppNav setQuery={setQueryValue} />
-              <AppImages loading={loading} images={images} />
+              <AppNav tab={tab} setTab={setTab} setQuery={setQuery} />
+
+              {
+                  tab === 'Home' ?
+                      <AppImages loading={loading} images={images} /> :
+                      <AppImages loading={loading} images={getSavedImages()} />
+              }
           </div>
         </div>
     );
