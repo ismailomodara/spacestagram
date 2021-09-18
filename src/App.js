@@ -3,7 +3,7 @@ import { getImages } from "./services";
 
 import appIcon from "./assets/img/icon.svg";
 
-import AppSearch from "./components/AppSearch";
+import AppNav from "./components/AppNav";
 import AppImages from "./views/AppImages";
 
 const App = () => {
@@ -28,7 +28,7 @@ const App = () => {
               <h1>Spacestagram</h1>
           </div>
           <div className="app-body">
-              <AppSearch setQuery={setQueryValue} />
+              <AppNav setQuery={setQueryValue} />
               <AppImages loading={loading} images={images} />
           </div>
         </div>
