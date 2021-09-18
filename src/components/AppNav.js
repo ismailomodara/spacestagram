@@ -22,7 +22,7 @@ const AppNav = ({ setQuery }) => {
                 <div className="search">
                     <input
                         type="text"
-                        placeholder="Search for an image (planet, star, galaxy)"
+                        placeholder="Search for an image"
                         onInput={(event) =>{
                             setQuery(event.target.value)
                         }}

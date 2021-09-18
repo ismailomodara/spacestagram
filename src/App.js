@@ -1,23 +1,31 @@
 import { useState, useEffect } from 'react';
 import { getImages } from "./utils";
+import debounce from 'lodash.debounce';
 
 import appIcon from "./assets/img/icon.svg";
 
 import AppNav from "./components/AppNav";
 import AppImages from "./views/AppImages";
 
+const fetchImages = debounce((query, callback) => {
+    getImages(query).then(response => {
+        if(response.collection) {
+            callback(response);
+        }
+    })
+}, 500);
+
 const App = () => {
     const [loading, setLoading] = useState(false);
     const [query, setQueryValue] = useState('');
     const [images, setImages] = useState([]);
 
+
     useEffect( () => {
         setLoading(true)
-        getImages(query).then(response => {
-            if(response.collection) {
-                setImages(response.collection.items)
-                setLoading(false)
-            }
+        fetchImages(query, response => {
+            setImages(response.collection.items)
+            setLoading(false)
         })
     }, [query]);
 
