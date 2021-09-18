@@ -1,10 +1,11 @@
 # Spacestagram
 
 A web application that enable users to explore space exploration images from NASA.
-
-The application was built with ReactJs leveraging on NASA Image API.
+[View application](https://spacestagram-io.netlify.app/)
 
 ![alt text](https://spacestagram-io.netlify.app/view.png)
+
+#### The application was built with ReactJs leveraging on NASA Image API, and hosted on Netlify.
 
 ## Application Functionalities
 
