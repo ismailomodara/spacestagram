@@ -33,12 +33,19 @@ const App = () => {
     return (
         <div className="app">
           <div className="app-header">
-              <img src={appIcon} alt="S" />
-              <h1>Spacestagram</h1>
+              <div className="app-header__logo">
+                  <img src={appIcon} alt="Icon" />
+                  <h1>Spacestagram</h1>
+              </div>
+              <div className="app-header__description">
+                  <p>Explore documentary images into space via the NASA Image API</p>
+              </div>
+              <a className="app-header__cta" href="https://github.com/omodara145/spacestagram.git" target="_blank">
+                  <span>Github</span>
+              </a>
           </div>
           <div className="app-body">
               <AppNav tab={tab} setTab={setTab} setQuery={setQuery} />
-
               {
                   tab === 'Home' ?
                       <AppImages loading={loading} images={images} /> :

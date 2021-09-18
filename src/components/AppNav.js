@@ -19,6 +19,7 @@ const AppNav = ({ tab, setTab, setQuery }) => {
                 <div className="search">
                     <input
                         type="text"
+                        name="search"
                         placeholder="Search for an image"
                         onInput={(event) =>{
                             setQuery(event.target.value)
