@@ -26,7 +26,7 @@ Navigate into the folder and run
 
 You can run the app using Web.
 
-Web: `react-native start`
+Web: `yarn start`
 
 ## Platforms Test
 1. Web.
