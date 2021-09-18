@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect } from 'react';
 import { getImages, getSavedImages } from "./utils";
 import debounce from 'lodash.debounce';
 
@@ -42,7 +42,7 @@ const App = () => {
               {
                   tab === 'Home' ?
                       <AppImages loading={loading} images={images} /> :
-                      <AppImages loading={loading} images={getSavedImages()} />
+                      <AppImages images={getSavedImages()} />
               }
           </div>
         </div>

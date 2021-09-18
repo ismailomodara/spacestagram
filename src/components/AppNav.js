@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 import '../assets/css/app-nav.scss';
 
 const AppNav = ({ tab, setTab, setQuery }) => {

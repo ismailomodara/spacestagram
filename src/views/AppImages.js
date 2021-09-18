@@ -11,8 +11,8 @@ const AppImages = ({ loading, images }) => {
                         return <AppImageLoading key={i} />
                     })
                     :
-                    images.map((image, key) => {
-                        return <AppImage key={key} image={image} />
+                    images.map(image => {
+                        return <AppImage key={image.data[0].nasa_id} image={image} />
                     })
             }
         </div>
